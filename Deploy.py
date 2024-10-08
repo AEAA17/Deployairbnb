@@ -46,7 +46,7 @@ if botao:
     dic.update(x_numericos)
     dic.update(x_tf)
     valores_x = pd.DataFrame([dic])  # Criando o DataFrame com os valores de entrada
-    dados = pd.read_csv(r'C:\Users\euric\Documents\Códigos Py\PDC\dados.csv')
+    dados = pd.read_csv(r"https://github.com/AEAA17/Deployairbnb/blob/main/dados.csv")
     colunas = list(dados.columns)[1:-1]
     valores_x = valores_x[colunas]
     modelo = joblib.load(r"C:\Users\euric\Documents\Códigos Py\PDC\modelo.joblib")
