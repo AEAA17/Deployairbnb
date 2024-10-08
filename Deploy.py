@@ -4,14 +4,15 @@ import joblib
 url = 'https://raw.githubusercontent.com/AEAA17/Deployairbnb/main/dados.csv'
 
 # Definindo os dicionários de entrada
-x_numericos = {'latitude': 0, 'longitude': 0, 'hóspedes': 0, 'banheiros': 0, 'quartos': 0, 'camas': 0, 'R$ por pessoas extras': 0,
-               'noites mínimas': 0, 'ano': 0, 'mês': 0, 'comodidades': 0, 'número de imóveis do anfitrião': 0}
+x_numericos = {'latitude': 0, 'longitude': 0, 'accommodates': 0, 'bathrooms': 0, 'bedrooms': 0, 'beds': 0, 'extra_people': 0,
+               'minimum_nights': 0, 'ano': 0, 'mes': 0, 'n_amenities': 0, 'host_listings_count': 0}
 
-x_tf = {'Anfitrião Superhost?': 0, 'Reserva instantânea?': 0}
+x_tf = {'host_is_superhost': 0, 'instant_bookable': 0}
 
-x_listas = {'Tipo de Propriedade': ['Apartamento', 'Cama e Café', 'Condomínio', 'Suíte de Hóspedes', 'Casa de Hóspedes', 'Hostel', 'Casa', 'Loft', 'Outros', 'Apartamento com Serviço'],
-            'Tipo de Quarto': ['Imóvel Inteiro', 'Quarto de Hotel', 'Quarto Privado', 'Quarto Compartilhado'],
-            'Política de Cancelamento': ['Flexível', 'Moderada', 'Rígida', 'Rígida 14 dias com Período de Carência']}           
+x_listas = {'property_type': ['Apartment', 'Bed and breakfast', 'Condominium', 'Guest suite', 'Guesthouse', 'Hostel', 'House', 'Loft', 'Outros', 'Serviced apartment'],
+            'room_type': ['Entire home/apt', 'Hotel room', 'Private room', 'Shared room'],
+            'cancelation_policy': ['flexible', 'moderate', 'strict', 'strict_14_with_grace_period']
+            }
 
 dic = {}
 for item in x_listas:
