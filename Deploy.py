@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 import joblib
+url = 'https://raw.githubusercontent.com/AEAA17/Deployairbnb/main/dados.csv'
 
 # Definindo os dicionários de entrada
 x_numericos = {'latitude': 0, 'longitude': 0, 'hóspedes': 0, 'banheiros': 0, 'quartos': 0, 'camas': 0, 'R$ por pessoas extras': 0,
@@ -46,7 +47,7 @@ if botao:
     dic.update(x_numericos)
     dic.update(x_tf)
     valores_x = pd.DataFrame([dic])  # Criando o DataFrame com os valores de entrada
-    dados = pd.read_csv(r"https://raw.githubusercontent.com/AEAA17/Deployairbnb/refs/heads/main/dados.csv")
+    dados = pd.read_csv(url)
     colunas = list(dados.columns)[1:-1]
     valores_x = valores_x[colunas]
     modelo = joblib.load(r"C:\Users\euric\Documents\Códigos Py\PDC\modelo.joblib")
